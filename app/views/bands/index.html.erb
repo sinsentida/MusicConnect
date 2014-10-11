@@ -1,0 +1,31 @@
+<h1>Listing bands</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Image</th>
+    <th>Homepage</th>
+    <th>Style</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bands.each do |band| %>
+  <tr>
+    <td><%= band.name %></td>
+    <td><%= band.location %></td>
+    <td><%= band.image %></td>
+    <td><%= band.homepage %></td>
+    <td><%= band.style %></td>
+    <td><%= link_to 'Show', band %></td>
+    <td><%= link_to 'Edit', edit_band_path(band) %></td>
+    <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Band', new_band_path %>
